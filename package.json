@@ -1,0 +1,21 @@
+{
+  "name": "yermtube",
+  "version": "1.0.0",
+  "description": "Let's watch videos.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yermyerm/yermtube.git"
+  },
+  "scripts": {
+    "win": "node index.js"
+  },
+  "author": "yerm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yermyerm/yermtube/issues"
+  },
+  "homepage": "https://github.com/yermyerm/yermtube#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
