@@ -1,15 +1,16 @@
 # Yermtube
 
-/ -> Home
+/ -> Home(Trend Videos)
 /join -> Join
 /login -> Login
-/search -> Search
+/search -> Search Video
 
-/user/edit -> Edit user
-/user/delete -> Delete user
+/users/:id -> See User
+/users/logout -> Log Out
+/users/edit -> Edit MY Profile
+/users/delete -> Delete MY Profile
 
-/videos/watch -> Watch Video
-/video/edit -> Edit Video
-/video/delete -> Delete Video
-/video/comments -> Comment on a video
-/video/comments/delete -> Delete A Comment of a Video
+/videos/:id -> See Video
+/videos/:id/edit -> Edit Video
+/videos/:id/delete -> Delete Video
+/videos/upload -> Upload Video
