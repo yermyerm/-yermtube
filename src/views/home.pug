@@ -1,7 +1,10 @@
-extends base.pug
-
-block head
-    title home | yermtube
+extends base
+include mixins/video
 
 block content
-    h1 Welcome to Home
+    h2 Here are some trending videos
+    each info in videos
+        +video(info)
+    else
+        ul
+            li Sorry nothing found.
