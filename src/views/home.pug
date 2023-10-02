@@ -2,13 +2,8 @@ extends base
 include mixins/video
 
 block content
-    h2 Here are some trending videos
-    each info in videos
-        +video(info)
+    each video in videos
+        +video(video)
     else
         ul
             li Sorry nothing found.
-    nav 
-                ul 
-                    li 
-                        a(href="/videos/upload") Upload a video &rarr; 
