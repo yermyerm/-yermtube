@@ -1,0 +1,10 @@
+extends base
+
+block content 
+    p #{errorMessage ? errorMessage : null}
+    form(method="POST")
+        input(value=loggedInUser.name, name="name", placeholder="name", type="text", required) 
+        input(value=loggedInUser.email, name="email", placeholder="email", type="email", required) 
+        input(value=loggedInUser.username, name="username", placeholder="username", type="text", required) 
+        input(value=loggedInUser.location, name="location", placeholder="location", type="text")
+        input(type="submit", value="Update Profile")
