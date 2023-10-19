@@ -47,8 +47,9 @@ export const postEdit = async (req, res) => {
   const {
     session: { user },
     body: { name, email, username, location },
+    file,
   } = req;
-
+  console.log(path);
   let searchParam = [];
 
   if (user.username !== username) {
@@ -69,6 +70,7 @@ export const postEdit = async (req, res) => {
   const updatedUser = await User.findByIdAndUpdate(
     user._id,
     {
+      avatarUrl: file ? file.path : avatarUrl,
       name,
       email,
       username,
