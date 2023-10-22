@@ -5,6 +5,9 @@ block content
     div.profile__data
         img(src="/"+user.avatarUrl).avatar
         h3=user.name
+        if loggedInUser._id == user._id
+            a(href="/users/edit")
+                i.fas.fa-pen-to-square
     div.video-grid
         if video
             each video in user.videos

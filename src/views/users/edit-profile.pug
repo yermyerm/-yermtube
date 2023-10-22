@@ -3,6 +3,7 @@ extends ../base
 block content 
     p #{errorMessage ? errorMessage : null}
     form(method="POST", enctype="multipart/form-data").edit-profile__form
+        img(src="/"+loggedInUser.avatarUrl).avatar
         label(for="avatar") Avatar
         input(name="avatar", type="file", id="avatar", accept="image/*")
         input(value=loggedInUser.name, name="name", placeholder="name", type="text", required) 

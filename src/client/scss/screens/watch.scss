@@ -1,0 +1,32 @@
+video {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.video__desc {
+  margin-bottom: 30px;
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  small {
+    font-size: 12px;
+    opacity: 0.5;
+  }
+  p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+.video__edit {
+  display: flex;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 30px;
+  a {
+    margin-right: 15px;
+    text-decoration: underline;
+  }
+}

@@ -12,6 +12,7 @@
 @import "./screens/search.scss";
 @import "./screens/profile.scss";
 @import "./screens/edit-profile.scss";
+@import "./screens/watch.scss";
 
 a {
   color: inherit;
@@ -37,6 +38,13 @@ body {
     sans-serif;
   background-color: $bg;
   color: white;
+  .page-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    top: -30px;
+  }
 }
 
 main {

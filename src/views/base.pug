@@ -6,7 +6,8 @@ html(lang="ko")
         link(rel="stylesheet" href="/static/css/styles.css")
     body 
         include partials/header
-        main 
+        main
+            h1.page-title=pageTitle
             block content
     include partials/footer
     script(src="/static/js/main.js")
