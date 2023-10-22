@@ -1,7 +1,9 @@
 import Video from "../models/Video";
 
 export const home = async (req, res) => {
-  const videos = await Video.find({}).sort({ createdAt: "desc" });
+  const videos = await Video.find({})
+    .sort({ createdAt: "desc" })
+    .populate("owner");
   return res.render("home", { pageTitle: "Home", videos });
 };
 
@@ -42,7 +44,7 @@ export const postEdit = async (req, res) => {
 };
 
 export const getUpload = (req, res) => {
-  return res.render("upload", { pageTitle: "Upload a Video" });
+  return res.render("videos/upload", { pageTitle: "Upload a Video" });
 };
 
 export const postUpload = async (req, res) => {

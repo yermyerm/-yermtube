@@ -143,4 +143,7 @@ export const logout = (req, res) => {
   req.session.user = undefined;
   return res.redirect("/");
 };
-export const see = (req, res) => res.send("See User");
+export const see = (req, res) => {
+  const user = req.session.user;
+  return res.render("users/profile", { pageTitle: "See User", user });
+};
