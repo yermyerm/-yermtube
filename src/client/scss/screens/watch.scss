@@ -18,6 +18,10 @@ video {
     font-size: 16px;
     margin-top: 10px;
   }
+  .video__owner {
+    text-decoration: underline;
+    font-weight: 600;
+  }
 }
 
 .video__edit {

@@ -9,7 +9,7 @@ block content
             a(href="/users/edit")
                 i.fas.fa-pen-to-square
     div.video-grid
-        if video
+        if user.videos
             each video in user.videos
                 +video(video)
         else 

@@ -4,12 +4,14 @@ block content
     video(src="/"+video.videoUrl, controls)
     div.video__desc
         h2=video.title
-        small uploaded by #{owner.name} • #{video.createdAt}
+        small uploaded by 
+            a(href=`/users/${video.owner._id}`).video__owner #{video.owner.name+" "}
+            | • #{video.createdAt}
         p=video.description
         ul
             each hashtag in video.hashtags
                 li=hashtag
-    if String(loggedInUser._id) === String(video.owner)
+    if String(loggedInUser._id) === String(video.owner._id)
         p.video__edit
             a(href=`${video.id}/edit`) Edit Video &rarr;
             br
