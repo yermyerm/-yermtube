@@ -16,22 +16,20 @@ block content
             div 
                 button#fullscreen Enter Full Screen
 
-
-    //-
-        div.video__desc
-            h2=video.title
-            small uploaded by 
-                a(href=`/users/${video.owner._id}`).video__owner #{video.owner.name+" "}
-                | • #{video.createdAt}
-            p=video.description
-            ul
-                each hashtag in video.hashtags
-                    li=hashtag
-        if String(loggedInUser._id) === String(video.owner._id)
-            p.video__edit
-                a(href=`${video.id}/edit`) Edit Video &rarr;
-                br
-                a(href=`${video.id}/delete`) Delete Video &rarr;
+    div.video__desc
+        h2=video.title
+        small uploaded by 
+            a(href=`/users/${video.owner._id}`).video__owner #{video.owner.name+" "}
+            | • #{video.createdAt}
+        p=video.description
+        ul
+            each hashtag in video.hashtags
+                li=hashtag
+    if String(loggedInUser._id) === String(video.owner._id)
+        p.video__edit
+            a(href=`${video.id}/edit`) Edit Video &rarr;
+            br
+            a(href=`${video.id}/delete`) Delete Video &rarr;
 
 block scripts 
     script(src="/static/js/videoPlayer.js")

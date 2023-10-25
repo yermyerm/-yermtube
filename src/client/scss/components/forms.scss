@@ -6,7 +6,7 @@ form {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
-input:not(input[type="range"]) {
+input:not([type="range"]) {
   all: unset;
   padding: 15px 20px;
   border-radius: 5px;

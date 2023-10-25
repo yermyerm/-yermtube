@@ -1,7 +1,6 @@
 extends ../base
 
 block content
-    h4 Update video
     form(method="POST")
         input(name="title", placeholder="Title", value=video.title, required, type="text", minlength=5)
         input(name="description", placeholder="Description", value=video.description, required, type="text", maxlength=140)
