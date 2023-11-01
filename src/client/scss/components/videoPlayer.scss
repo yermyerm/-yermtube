@@ -1,0 +1,14 @@
+#videoControls {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  i {
+    margin: 0px 5px;
+  }
+  #timeline {
+    width: 500px;
+  }
+}

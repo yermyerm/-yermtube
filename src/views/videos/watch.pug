@@ -4,8 +4,8 @@ block content
     div#videoContainer
         video(src="/"+video.videoUrl)
         div#videoControls
-            button#play Play 
-            button#mute Mute
+            i#play.fas.fa-play
+            i#mute.fas.fa-volume-xmark
             input(type="range", value=0.5, step="0.1", min="0", max="1")#volume
             div 
                 span#currenTime 0:00
@@ -14,7 +14,7 @@ block content
             div
                 input(type="range", value=0, step="1", min="0")#timeline
             div 
-                button#fullscreen Enter Full Screen
+                i#fullscreen.fas.fa-expand
 
     div.video__desc
         h2=video.title
