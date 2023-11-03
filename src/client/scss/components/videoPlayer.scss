@@ -1,14 +1,52 @@
+#videoContainer {
+  position: relative;
+  video {
+    width: 100%;
+  }
+}
 #videoControls {
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  right: 0px;
+  width: calc(95vw - 50px);
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   padding: 10px;
-  margin: 0px 10px;
+  margin: auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   i {
     margin: 0px 5px;
   }
+  #time {
+    width: 100px;
+    text-align: center;
+  }
+  #volume {
+    width: 100px;
+    margin-right: 20px;
+  }
   #timeline {
-    width: 500px;
+    width: calc(90vw - 300px);
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    height: 8px;
+    border-radius: 4px;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+
+  ::-ms-fill-lower {
+    background: white;
   }
 }

@@ -37,7 +37,7 @@ const handleVolumeChange = (event) => {
 };
 
 const formatTime = (seconds) => {
-  const time = new Date(seconds * 1000).toISOString().subString(14, 20);
+  const time = new Date(seconds * 1000).toISOString().substring(14, 20);
   if (time[0] === "0") {
     return time.substring(1, 5);
   } else {
@@ -80,9 +80,9 @@ const handleControlsShowing = () => {
     clearTimeout(controlsTimeout);
     controlsTimeout = null;
   }
-  videoControls.classList.add("showing");
+  videoControls.classList.remove("hidden");
   controlsTimeout = setTimeout(
-    () => videoControls.classList.remove("showing"),
+    () => videoControls.classList.add("hidden"),
     3000
   );
 };
@@ -90,6 +90,7 @@ const handleControlsShowing = () => {
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMute);
 volumeRange.addEventListener("input", handleVolumeChange);
+video.addEventListener("click", handlePlayClick);
 video.addEventListener("loadedmetadata", handleLoadedMetadata);
 video.addEventListener("timeupdate", handleTimeUpdate);
 video.addEventListener("timeupdate", handleVideoEnd);
