@@ -5,34 +5,41 @@
   }
 }
 #videoControls {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  &.showing {
+    opacity: 1;
+  }
   position: absolute;
   bottom: 30px;
   left: 0px;
   right: 0px;
-  width: calc(95vw - 50px);
+  width: 95%;
+  max-width: 1500px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   padding: 10px;
   margin: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 6fr 1fr auto;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  div {
+    display: flex;
+  }
   i {
-    margin: 0px 5px;
+    margin: 0 10px;
   }
   #time {
-    width: 100px;
-    text-align: center;
-  }
-  #volume {
-    width: 100px;
-    margin-right: 20px;
+    margin: 0 10px;
   }
   #timeline {
-    width: calc(90vw - 300px);
+    width: 95%;
   }
   input[type="range"] {
     -webkit-appearance: none;
+    position: relative;
+    top: 2px;
     background: rgba(255, 255, 255, 0.2);
     height: 8px;
     border-radius: 4px;

@@ -80,11 +80,22 @@ const handleControlsShowing = () => {
     clearTimeout(controlsTimeout);
     controlsTimeout = null;
   }
-  videoControls.classList.remove("hidden");
+  videoControls.classList.add("showing");
   controlsTimeout = setTimeout(
-    () => videoControls.classList.add("hidden"),
+    () => videoControls.classList.remove("showing"),
     3000
   );
+};
+const handleKeyboard = (event) => {
+  if (event.code === "Space") {
+    handlePlayClick();
+  }
+  if (event.key === "m") {
+    handleMute();
+  }
+  if (event.key === "f") {
+    handleFullscreen();
+  }
 };
 
 playBtn.addEventListener("click", handlePlayClick);
@@ -98,3 +109,4 @@ video.addEventListener("mousemove", handleControlsShowing);
 timeline.addEventListener("input", handleTimelineChange);
 fullscreenBtn.addEventListener("click", handleFullscreen);
 videoContainer.addEventListener("fullscreenchange", handleFullscreenBtnText);
+document.addEventListener("keyup", handleKeyboard);
