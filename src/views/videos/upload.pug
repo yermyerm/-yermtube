@@ -1,14 +1,14 @@
 extends ../base
 
 block content
-    div
-        video#preview
-        button#startBtn Start Recording
     if errorMessage
         span=errorMessage
     form(method="POST", enctype="multipart/form-data")
         label(for="video") Video File
         input(name="video", type="file", accept="video/*", required, id="video")
+        div
+            video#preview.hidden
+            button#startBtn Record Video
         input(name="title", placeholder="Title", required, type="text")
         input(name="description", placeholder="Description", required, type="text", maxlength=140)
         input(name="hashtags", placeholder="Hashtags, separated by comma.", required, type="text")

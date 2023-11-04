@@ -61,7 +61,6 @@ const handleTimelineChange = (event) => {
 };
 const handleVideoEnd = () => {
   if (video.currentTime === video.duration) {
-    console.log("Video ended!");
     video.currentTime = 0;
     playBtn.classList = "fas fa-play";
   }
@@ -97,6 +96,10 @@ const handleKeyboard = (event) => {
     handleFullscreen();
   }
 };
+const handleEnded = (event) => {
+  const { id } = videoContainer.dataset;
+  fetch(`/api/videos/${id}/view`, { method: "POST" });
+};
 
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMute);
@@ -106,6 +109,7 @@ video.addEventListener("loadedmetadata", handleLoadedMetadata);
 video.addEventListener("timeupdate", handleTimeUpdate);
 video.addEventListener("timeupdate", handleVideoEnd);
 video.addEventListener("mousemove", handleControlsShowing);
+video.addEventListener("ended", handleEnded);
 timeline.addEventListener("input", handleTimelineChange);
 fullscreenBtn.addEventListener("click", handleFullscreen);
 videoContainer.addEventListener("fullscreenchange", handleFullscreenBtnText);

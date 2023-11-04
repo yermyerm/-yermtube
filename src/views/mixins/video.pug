@@ -4,5 +4,5 @@ mixin video(video)
         div.video-mixin__data
             span.video-mixin__title=video.title
             div.video-mixin__meta
-                span #{video.owner ? video.owner.name+"•" : null}
+                span #{video.owner.name+" • "}
                 span 조회수 #{video.meta.views}회
