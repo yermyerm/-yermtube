@@ -1,5 +1,7 @@
 const startBtn = document.getElementById("startBtn");
 const video = document.getElementById("preview");
+const needRecord = document.getElementById("needRecord");
+const videoRecorder = document.getElementById("videoRecorder");
 
 let stream;
 let recorder;
@@ -14,7 +16,6 @@ const handleDownload = (event) => {
   document.body.appendChild(a);
   a.click();
 };
-
 const handleStop = (event) => {
   event.preventDefault();
   startBtn.innerText = "Download Recording";
@@ -40,11 +41,11 @@ const handleStart = (event) => {
 };
 const handleRecord = (event) => {
   event.preventDefault();
-  video.classList = {};
+  videoRecorder.classList = {};
   init();
-  startBtn.innerText = "Start Recording";
-  startBtn.removeEventListener("click", handleRecord);
-  startBtn.addEventListener("click", handleStart);
+  needRecord.innerText = "Close Video Recorder";
+  needRecord.removeEventListener("click", handleRecord);
+  needRecord.addEventListener("click", handleClose);
 };
 const init = async () => {
   stream = await navigator.mediaDevices.getUserMedia({
@@ -54,7 +55,11 @@ const init = async () => {
   video.srcObject = stream;
   video.play();
 };
-const end = async () => {
-  video.classList = "hidden";
+const handleClose = () => {
+  videoRecorder.classList = "hidden";
+  needRecord.innerText = "Need to Record New Video?";
+  needRecord.removeEventListener("click", handleClose);
+  needRecord.addEventListener("click", handleRecord);
 };
-startBtn.addEventListener("click", handleRecord);
+needRecord.addEventListener("click", handleRecord);
+startBtn.addEventListener("click", handleStart);
