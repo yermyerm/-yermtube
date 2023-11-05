@@ -1,3 +1,4 @@
+// import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
 const startBtn = document.getElementById("startBtn");
 const video = document.getElementById("preview");
 const needRecord = document.getElementById("needRecord");
@@ -7,12 +8,19 @@ let stream;
 let recorder;
 let videoFile;
 
-const handleDownload = (event) => {
+const handleDownload = async (event) => {
   event.preventDefault();
+  // const ffmpeg = createFFmpeg({
+  //   mainName: "main",
+  //   corePath: "https://unpkg.com/@ffmpeg/core-st@0.12.7/dist/ffmpeg-core.js",
+  //   log: true,
+  // });
+  // await ffmpeg.load();
+  // ffmpeg.FS("writeFile", "recording.webm", await fetchFile(videoFile)); //가상 컴퓨터에 파일 생성
+  // await ffmpeg.run("-i", "recording.webm", "-r", "60", "output.mp4");
   const a = document.createElement("a");
   a.href = videoFile;
-  const date = new Date();
-  a.download = `${date.getTime()}.webm`;
+  a.download = "recording.webm";
   document.body.appendChild(a);
   a.click();
 };
