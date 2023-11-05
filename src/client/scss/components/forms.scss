@@ -5,6 +5,16 @@ form {
   background-color: rgba($color: #000, $alpha: 0.3);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
+  button {
+    padding: 5px 10px;
+    background-color: rgba($color: white, $alpha: 0.7);
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    border-radius: 10px;
+    border: none;
+  }
 }
 input:not([type="range"]) {
   all: unset;

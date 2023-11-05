@@ -8,6 +8,7 @@ const timeline = document.getElementById("timeline");
 const fullscreenBtn = document.getElementById("fullscreen");
 const videoContainer = document.getElementById("videoContainer");
 const videoControls = document.getElementById("videoControls");
+const commentForm = document.getElementById("commentForm");
 
 video.volume = 0.5;
 let volumeValue = video.volume;
@@ -86,7 +87,11 @@ const handleControlsShowing = () => {
   );
 };
 const handleKeyboard = (event) => {
+  if (event.target.form === commentForm) {
+    return;
+  }
   if (event.code === "Space") {
+    event.preventDefault();
     handlePlayClick();
   }
   if (event.key === "m") {
@@ -113,4 +118,4 @@ video.addEventListener("ended", handleEnded);
 timeline.addEventListener("input", handleTimelineChange);
 fullscreenBtn.addEventListener("click", handleFullscreen);
 videoContainer.addEventListener("fullscreenchange", handleFullscreenBtnText);
-document.addEventListener("keyup", handleKeyboard);
+document.addEventListener("keydown", handleKeyboard);
