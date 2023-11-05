@@ -20,7 +20,8 @@ const handleDownload = async (event) => {
   // await ffmpeg.run("-i", "recording.webm", "-r", "60", "output.mp4");
   const a = document.createElement("a");
   a.href = videoFile;
-  a.download = "recording.webm";
+  const date = new Date();
+  a.download = `${date.getTime()}.webm`;
   document.body.appendChild(a);
   a.click();
 };
@@ -38,7 +39,6 @@ const handleStart = (event) => {
   startBtn.addEventListener("click", handleStop);
   recorder = new MediaRecorder(stream);
   recorder.ondataavailable = (event) => {
-    console.log("recording done!");
     videoFile = URL.createObjectURL(event.data);
     video.srcObject = null;
     video.src = videoFile;
